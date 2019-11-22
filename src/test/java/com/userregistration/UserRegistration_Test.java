@@ -5,6 +5,7 @@ import org.junit.Test;
 
 public class UserRegistration_Test {
     UserRegistration userRegistration = new UserRegistration();
+    //Test cases for First Name
     @Test
     public void givenFirstName_WhenProper_ReturnTrue() {
         boolean result = userRegistration.validFirstName("Priyanka");
@@ -15,13 +16,11 @@ public class UserRegistration_Test {
         boolean result = userRegistration.validFirstName("Pri");
         Assert.assertTrue(result);
     }
-
     @Test
     public void givenFirstName_WhenUpperLetterMissing_ReturnFalse() {
         boolean result = userRegistration.validFirstName("priyanka");
         Assert.assertFalse(result);
     }
-
     @Test
     public void givenFirstName_WhenLengthLessThanThree_ReturnFalse() {
         boolean result = userRegistration.validFirstName("pr");
@@ -46,5 +45,12 @@ public class UserRegistration_Test {
     public void givenFirstName_WhenAllLetterUpper_ReturnFalse() {
         boolean result = userRegistration.validFirstName("PRIYANKA");
         Assert.assertFalse(result);
+    }
+
+    //Test cases For LastName
+    @Test
+    public void givenLastName_WhenProper_ReturnTrue() {
+        boolean result = userRegistration.validLastName("Bhiogade");
+        Assert.assertTrue(result);
     }
 }
